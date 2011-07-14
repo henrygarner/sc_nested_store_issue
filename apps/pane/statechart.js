@@ -1,6 +1,6 @@
 /*globals Pane */
 
-Pane.yourView: SC.SheetPane.create({
+Pane.yourView = SC.SheetPane.create({
 	layout: { width: 500, height: 200, centerX: 0, centerY: 0 },
 	defaultResponder: 'Pane.statechart',
 	contentView: SC.View.design({
@@ -16,9 +16,12 @@ Pane.yourView: SC.SheetPane.create({
 			title: 'Cancel',
 			isCancel: YES,
 			layout: { top: 165, right: 15, width: 80 }
-		})
+		}),
+		hidePane: function() {
+			Pane.statechart.sendEvent('hidePane');
+		}
 	})
-})
+});
 
 
 Pane.statechart = SC.Statechart.create({
