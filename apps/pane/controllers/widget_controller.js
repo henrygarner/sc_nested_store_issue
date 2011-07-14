@@ -13,6 +13,4 @@
 Pane.widgetController = SC.ObjectController.create(
 /** @scope Pane.widgetController.prototype */ {
 
-  // TODO: Add your own code here.
-
 }) ;

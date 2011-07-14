@@ -1,41 +1,21 @@
 /*globals Pane */
 
-Pane.yourView = SC.SheetPane.create({
-	layout: { width: 500, height: 200, centerX: 0, centerY: 0 },
-	defaultResponder: 'Pane.statechart',
-	contentView: SC.View.design({
-		childViews: 'labelView buttonView'.w(),
-		labelView: SC.ListView.design({
-			contentBinding: 'Pane.donglesController.arrangedObjects', 
-			contentValueKey: 'name',
-			layout: {top : 10, left: 10, width: 150, height: 180 }
-		}),
-		buttonView: SC.ButtonView.design({
-			action: 'hidePane',
-			title: 'Cancel',
-			isCancel: YES,
-			layout: { top: 165, right: 15, width: 80 }
-		})
-	})
-});
-
-
 Pane.statechart = SC.Statechart.create({
-	initialState: 'MAINSTATE',
-	MAINSTATE: SC.State.design({
+	initialState: 'mainState',
+	mainState: SC.State.design({
 
 		enterState: function() {
 			Pane.widgetController.set('content', Pane.store.find('Pane.Widget', 1));
-			Pane.mainPane = SC.TemplatePane.append({layerId: 'pane', templateName: 'pane'});
+			Pane.getPath('mainPage.mainPane').append();
 		},
 		showPane: function() {
-      		this.gotoState('SHOWINGPOPUP');
+      		this.gotoState('showPane');
 		},
     	exitState: function(){
     	}
 	}),
 	
-	SHOWINGPOPUP: SC.State.design({
+	showPane: SC.State.design({
 	  
 	  nestedStore: null,
 	  
@@ -43,18 +23,18 @@ Pane.statechart = SC.Statechart.create({
 	    this.nestedStore = Pane.store.chain();
 	    var chainedWidget = this.nestedStore.find('Pane.Widget', 1);
 		Pane.donglesController.set('content', chainedWidget.get('dongles'));
-		Pane.yourView.append();
+		Pane.sheetPane.append();
 	  },
 	  
 	  hidePane: function(){
-	    this.gotoState('MAINSTATE');
+	    this.gotoState('mainState');
 	  },
 	  
 	  exitState: function(){
 	    Pane.donglesController.set('content',null);
 	    this.nestedStore.destroy();
 	    this.nestedStore = null;
-		Pane.yourView.remove();
+		Pane.sheetPane.remove();
 	  }
 	})
 });

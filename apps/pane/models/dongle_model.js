@@ -14,7 +14,6 @@
 Pane.Dongle = SC.Record.extend(
 /** @scope Pane.Dongle.prototype */ {
 
-  // TODO: Add your own code here.
 	name: SC.Record.attr(String, {isRequired: YES}),
 	widgets: SC.Record.toMany('Pane.Widget')
 

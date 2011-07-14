@@ -8,10 +8,6 @@ sc_require('models/dongle_model');
 
 Pane.Dongle.FIXTURES = [
 
-  // TODO: Add your data fixtures here.
-  // All fixture records must have a unique primary key (default 'guid').  See 
-  // the example below.
-
    { guid: 1,
      name: 'Dongle 1',
      widgets: [1] },

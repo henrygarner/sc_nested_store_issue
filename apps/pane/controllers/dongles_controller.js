@@ -13,6 +13,4 @@
 Pane.donglesController = SC.ArrayController.create(
 /** @scope Pane.donglesController.prototype */ {
 
-  // TODO: Add your own code here.
-
 }) ;
