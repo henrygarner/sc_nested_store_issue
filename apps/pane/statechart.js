@@ -11,15 +11,11 @@ Pane.yourView = SC.SheetPane.create({
 			layout: {top : 10, left: 10, width: 150, height: 180 }
 		}),
 		buttonView: SC.ButtonView.design({
-			target: 'parentView',
 			action: 'hidePane',
 			title: 'Cancel',
 			isCancel: YES,
 			layout: { top: 165, right: 15, width: 80 }
-		}),
-		hidePane: function() {
-			Pane.statechart.sendEvent('hidePane');
-		}
+		})
 	})
 });
 
