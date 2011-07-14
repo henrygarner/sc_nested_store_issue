@@ -6,7 +6,7 @@ Pane.yourView = SC.SheetPane.create({
 	contentView: SC.View.design({
 		childViews: 'labelView buttonView'.w(),
 		labelView: SC.ListView.design({
-			contentBinding: 'Pane.donglesController', 
+			contentBinding: 'Pane.donglesController.arrangedObjects', 
 			contentValueKey: 'name',
 			layout: {top : 10, left: 10, width: 150, height: 180 }
 		}),

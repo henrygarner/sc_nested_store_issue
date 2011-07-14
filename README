@@ -1,7 +1,10 @@
-==========================================================================
-Project:   Pane
-Copyright: @2011 My Company, Inc.
-==========================================================================
+Instructions
 
-TODO: Describe Your Project
+1. Click 'Pane Me!'
+2. Observe empty ListView in the SheetPane
+3. Click on ListView to observe 3 empty (but selectable) rows
+4. Click 'Cancel'
+5. Click 'Pane Me!' a second time
+6. Observe populated ListView in the SheetPane
 
+Q: why is the ListView empty initially? How can I ensure it is populated the first time around?
