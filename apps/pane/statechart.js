@@ -28,14 +28,11 @@ Pane.statechart = SC.Statechart.create({
 			Pane.widgetController.set('content', Pane.store.find('Pane.Widget', 1));
 			Pane.mainPane = SC.TemplatePane.append({layerId: 'pane', templateName: 'pane'});
 		},
-		
 		showPane: function() {
-      this.gotoState('SHOWINGPOPUP');
+      		this.gotoState('SHOWINGPOPUP');
 		},
-    
-    exitState: function(){
-    
-    }
+    	exitState: function(){
+    	}
 	}),
 	
 	SHOWINGPOPUP: SC.State.design({
@@ -45,8 +42,8 @@ Pane.statechart = SC.Statechart.create({
 	  enterState: function(){
 	    this.nestedStore = Pane.store.chain();
 	    var chainedWidget = this.nestedStore.find('Pane.Widget', 1);
-			Pane.donglesController.set('content', chainedWidget.get('dongles'));
-			Pane.yourView.append();
+		Pane.donglesController.set('content', chainedWidget.get('dongles'));
+		Pane.yourView.append();
 	  },
 	  
 	  hidePane: function(){
@@ -57,7 +54,7 @@ Pane.statechart = SC.Statechart.create({
 	    Pane.donglesController.set('content',null);
 	    this.nestedStore.destroy();
 	    this.nestedStore = null;
-			Pane.yourView.remove();
+		Pane.yourView.remove();
 	  }
 	})
 });
