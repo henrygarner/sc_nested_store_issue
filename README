@@ -2,9 +2,11 @@ Instructions
 
 1. Click 'Pane Me!'
 2. Observe empty ListView in the SheetPane
-3. Click on ListView to observe 3 empty (but selectable) rows
-4. Click 'Cancel'
-5. Click 'Pane Me!' a second time
-6. Observe populated ListView in the SheetPane
+3. Click 'Cancel'
+4. Click 'Pane Me!' a second time
+5. Click on ListView to observe 3 empty (but selectable) rows
+6. Click 'Cancel'
+7. Click 'Pane Me!' a third time
+8. Observe populated ListView in the SheetPane
 
 Q: why is the ListView empty initially? How can I ensure it is populated the first time around?

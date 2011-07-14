@@ -5,7 +5,6 @@ Pane.statechart = SC.Statechart.create({
 	mainState: SC.State.design({
 
 		enterState: function() {
-			Pane.widgetController.set('content', Pane.store.find('Pane.Widget', 1));
 			Pane.getPath('mainPage.mainPane').append();
 		},
 		showPane: function() {
